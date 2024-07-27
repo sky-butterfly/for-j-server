@@ -5,19 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6840bd20-a612-4199-996d-e37f686fa32d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/forj/plan/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/forj/plan/controller/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/forj/plan/entity/BaseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/forj/plan/entity/Days.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/forj/plan/entity/Plans.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/forj/plan/entity/Times.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/forj/plan/entity/Users.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/forj/plan/enums/PlanType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/forj/plan/controller/HelloControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/forj/plan/config/JPAConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/forj/plan/controller/PlanController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/forj/plan/model/response/ApiResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/forj/plan/model/response/ApiResponseHeader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/forj/plan/model/response/CurrentPlanResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/forj/plan/model/response/PlanResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/forj/plan/repository/PlansCustomRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/forj/plan/repository/PlansCustomRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/forj/plan/repository/PlansRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/forj/plan/repository/UsersCustomRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/forj/plan/repository/UsersRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/forj/plan/service/PlanService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/sql/plans.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/sql/users.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/forj/plan/controller/PlanControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/forj/plan/entity/Plans.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/forj/plan/entity/Plans.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,12 +44,7 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="for-j-server" type="f1a62948:ProjectNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -53,6 +55,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -73,14 +76,21 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/hk/Desktop/git/for-j-server&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
     &quot;settings.editor.splitter.proportion&quot;: &quot;0.20984456&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Application">
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.forj.plan.model.response" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.PlanControllerTest.plan_목록_가져온다">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.forj.plan.Application" />
       <module name="for-j-server.main" />
@@ -94,51 +104,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HelloControllerTest.hello가_리턴된다" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.forj.plan.controller.HelloControllerTest.hello가_리턴된다&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="for-j-server [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="HelloControllerTest.hello가_리턴된다" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HelloControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="for-j-server.test" />
       <extension name="coverage">
         <pattern>
@@ -148,7 +114,53 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.forj.plan.controller" />
       <option name="MAIN_CLASS_NAME" value="com.forj.plan.controller.HelloControllerTest" />
-      <option name="METHOD_NAME" value="hello가_리턴된다" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlanControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="for-j-server.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.forj.plan.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.forj.plan.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.forj.plan.controller.PlanControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlanControllerTest.여행중인_plan_가져온다" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="for-j-server.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.forj.plan.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.forj.plan.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.forj.plan.controller.PlanControllerTest" />
+      <option name="METHOD_NAME" value="여행중인_plan_가져온다" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlanControllerTest.plan_목록_가져온다" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="for-j-server.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.forj.plan.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.forj.plan.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.forj.plan.controller.PlanControllerTest" />
+      <option name="METHOD_NAME" value="plan_목록_가져온다" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -156,10 +168,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PlanControllerTest.plan_목록_가져온다" />
+        <item itemvalue="JUnit.PlanControllerTest.여행중인_plan_가져온다" />
+        <item itemvalue="JUnit.PlanControllerTest" />
+        <item itemvalue="JUnit.HelloControllerTest" />
         <item itemvalue="Application.Application" />
-        <item itemvalue="Gradle.for-j-server [build]" />
-        <item itemvalue="JUnit.HelloControllerTest.hello가_리턴된다" />
-        <item itemvalue="Gradle.HelloControllerTest.hello가_리턴된다" />
       </list>
     </recent_temporary>
   </component>

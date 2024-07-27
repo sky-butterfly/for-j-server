@@ -2,9 +2,11 @@ package com.forj.plan.entity;
 
 import com.forj.plan.enums.PlanType;
 import jakarta.persistence.*;
+import lombok.Getter;
 
 import java.time.LocalDateTime;
 
+@Getter
 @Entity
 public class Plans extends BaseEntity{
 

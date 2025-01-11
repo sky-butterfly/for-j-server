@@ -1,7 +1,7 @@
 package com.forj.plan.repository;
 
 import static com.forj.plan.entity.QPlans.plans;
-import static com.forj.plan.entity.QUsers.users;
+import static com.forj.plan.entity.QMember.member;
 
 import com.forj.plan.entity.Plans;
 import com.querydsl.jpa.impl.JPAQueryFactory;
@@ -15,10 +15,10 @@ public class PlansCustomRepositoryImpl implements PlansCustomRepository{
     private final JPAQueryFactory queryFactory;
 
     @Override
-    public Plans getPlansByUserName(String userName){
+    public Plans getPlanByMemberName(String memberName){
         return queryFactory.selectFrom(plans)
-                .innerJoin(users).on(plans.usersId.eq(users.id))
-                .where(users.name.eq(userName))
+                .innerJoin(member).on(plans.memberId.eq(member.id).and(plans.isCurrent.isTrue()))
+                .where(member.name.eq(memberName))
                 .fetchOne();
     }
 }

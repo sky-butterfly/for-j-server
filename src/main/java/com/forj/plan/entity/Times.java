@@ -1,9 +1,11 @@
 package com.forj.plan.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 
 import java.time.LocalDateTime;
 
+@Getter
 @Entity
 public class Times extends BaseEntity{
 

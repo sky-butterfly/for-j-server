@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Entity
@@ -15,9 +17,10 @@ public class Plans extends BaseEntity{
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "users_id", nullable = false)
-    private Long usersId;
+    @Column(name = "member_id", nullable = false)
+    private Long memberId;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "type", nullable = false)
     private PlanType type;
 
@@ -35,4 +38,8 @@ public class Plans extends BaseEntity{
 
     @Column(name = "end_date", nullable = false)
     private LocalDateTime endDate;
+
+    @OneToMany(mappedBy = "plans", cascade = CascadeType.ALL)
+    private List<Days> days = new ArrayList<>();
+
 }

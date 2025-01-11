@@ -7,6 +7,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Getter
 @Builder
 @NoArgsConstructor
@@ -20,6 +22,10 @@ public class PlanResponse {
     private String name;
 
     private boolean isCurrent;
+
+    private DayResponse dayResponse;
+
+    private List<TimeResponse> timeResponse;
 
     public static PlanResponse of(Plans plans) {
         return PlanResponse.builder()

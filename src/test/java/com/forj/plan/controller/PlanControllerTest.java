@@ -2,6 +2,7 @@ package com.forj.plan.controller;
 
 import com.forj.plan.enums.PlanType;
 import com.forj.plan.model.response.CurrentPlanResponse;
+import com.forj.plan.model.response.DayResponse;
 import com.forj.plan.model.response.PlanResponse;
 import com.forj.plan.repository.PlansRepository;
 import com.forj.plan.service.PlanService;
@@ -16,6 +17,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -38,13 +40,13 @@ public class PlanControllerTest {
     @Test
     public void 여행중인_plan_가져온다() throws Exception {
 
-        String userName = "관리자";
+        String memberName = "관리자";
         MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
-        params.add("userName", userName);
+        params.add("memberName", memberName);
 
         // given
         CurrentPlanResponse response = CurrentPlanResponse.builder().type(PlanType.A).build();
-        BDDMockito.given(planService.getCurrentPlan(userName)).willReturn(response);
+        BDDMockito.given(planService.getCurrentPlan(memberName)).willReturn(response);
 
         // when
         mvc.perform(get("/plans/current").params(params))
@@ -52,31 +54,35 @@ public class PlanControllerTest {
                 .andDo(print());
 
         // then
-        BDDMockito.verify(planService).getCurrentPlan(userName);
+        BDDMockito.verify(planService).getCurrentPlan(memberName);
     }
 
     @Test
     public void plan_목록_가져온다() throws Exception {
 
-        Long userId = 1L;
-        MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
-        params.add("userId", String.valueOf(userId));
+        Long planId = 1L;
 
         // given
-        List<PlanResponse> response = List.of(PlanResponse.builder()
-                        .id(1L)
-                        .name("첫 계획")
-                        .type(PlanType.A)
-                        .isCurrent(true)
-                .build());
-        BDDMockito.given(planService.getPlans(userId)).willReturn(response);
+        PlanResponse response = PlanResponse.builder()
+                .id(1L)
+                .name("첫 계획")
+                .type(PlanType.A)
+                .isCurrent(true)
+                .dayResponse(DayResponse.builder()
+                        .dayDate(LocalDateTime.now())
+                        .dayNum(2)
+                        .id(2L)
+                        .build())
+                .timeResponse(List.of())
+                .build();
+        BDDMockito.given(planService.getPlans(planId)).willReturn(response);
 
         // when
-        mvc.perform(get("/plans").params(params))
+        mvc.perform(get("/plans/planId/1"))
                 .andExpect(status().isOk())
                 .andDo(print());
 
         // then
-        BDDMockito.verify(planService).getPlans(userId);
+        BDDMockito.verify(planService).getPlans(planId);
     }
 }
